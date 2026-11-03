@@ -10,5 +10,5 @@ run_worker_first = ["/api/*"]
 [[d1_databases]]
 binding = "DB"
 database_name = "naija-brain-arena-db"
-database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+database_id = "e2107f1b-7a80-4cc0-a08b-f0a25610ba80"
 migrations_dir = "migrations"
