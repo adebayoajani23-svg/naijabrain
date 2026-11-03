@@ -1,0 +1,14 @@
+name = "naija-brain-arena"
+main = "worker.js"
+compatibility_date = "2026-11-03"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "naija-brain-arena-db"
+database_id = "PASTE_YOUR_D1_DATABASE_ID_HERE"
+migrations_dir = "migrations"
