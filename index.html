@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111126">
+<meta name="description" content="Play free brain challenges in Mathematics, Nigerian Trivia, Technology, Sports and more. Think fast. Play smart.">
+<title>Naija Brain Arena — Think Fast. Play Smart.</title>
+<style>
+:root{--bg:#101022;--panel:#1b1b36;--panel2:#242444;--text:#f7f6ff;--muted:#b9b8d1;--gold:#ffc84a;--green:#5ce0a0;--purple:#9d8cff;--line:#343452;--danger:#ff7777}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#353064 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}
+button{font:inherit;cursor:pointer}.wrap{width:min(1100px,92%);margin:auto}.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:14px}.brand{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#ffe18a,#f3a900);display:grid;place-items:center;color:#17152b;font-size:25px;font-weight:900;box-shadow:0 8px 30px #ffc84a33}.brand strong{display:block;letter-spacing:.06em;font-size:15px}.brand small{color:var(--muted);font-size:10px;letter-spacing:.16em}.pill{border:1px solid #4b4a70;color:#d8d5ff;padding:8px 12px;border-radius:999px;font-size:12px}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;margin:20px 0}.hero-main,.hero-side,.panel{background:linear-gradient(145deg,#242344,#19192f);border:1px solid #373654;border-radius:24px;padding:clamp(22px,4vw,38px);box-shadow:0 18px 60px #0002}.eyebrow{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.02;letter-spacing:-.045em;margin:13px 0}.hero p{color:var(--muted);line-height:1.6;max-width:520px}.gold{color:var(--gold)}.primary{border:0;border-radius:13px;background:linear-gradient(135deg,#ffdc79,#ffb91f);color:#211b31;font-weight:900;padding:14px 20px;box-shadow:0 8px 24px #ffc84a25}.secondary{border:1px solid #575575;border-radius:13px;background:#292846;color:white;padding:12px 16px;font-weight:700}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero-side{display:flex;flex-direction:column;justify-content:space-between;min-height:260px;background:radial-gradient(circle at 70% 20%,#6652a4 0,transparent 36%),linear-gradient(145deg,#29264c,#17172d)}.orbit{font-size:70px;text-align:center;filter:drop-shadow(0 10px 20px #ffc84a44)}.statrow{display:flex;justify-content:space-between;border-top:1px solid #ffffff20;padding-top:17px;color:var(--muted);font-size:13px}.statrow b{display:block;color:white;font-size:20px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:34px 0 16px}.section-head h2{font-size:23px;margin:0}.section-head p{margin:5px 0 0;color:var(--muted);font-size:13px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}.cat{border:1px solid #393854;border-radius:18px;padding:19px;background:#1b1b34;text-align:left;color:white;transition:.2s;min-height:145px}.cat:hover{transform:translateY(-4px);border-color:var(--gold);background:#252344}.cat .emoji{font-size:28px}.cat h3{margin:12px 0 5px;font-size:16px}.cat p{margin:0;color:var(--muted);font-size:12px}.tag{display:inline-block;margin-top:12px;color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.1em}
+.lower{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0 40px}.mini{background:#1b1b34;border:1px solid #373654;border-radius:19px;padding:22px}.mini h3{margin:0 0 8px}.mini p{color:var(--muted);font-size:13px;line-height:1.55;margin:0}.sponsor{border-style:dashed;background:linear-gradient(120deg,#26213e,#1a1a32)}.adslot{margin:18px 0 28px;border:1px dashed #4a4967;border-radius:14px;min-height:82px;display:grid;place-items:center;text-align:center;padding:14px;color:#8988a8;font-size:12px}
+footer{border-top:1px solid #2d2d49;padding:24px 0 35px;color:#9291ac;font-size:12px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.hidden{display:none!important}.quizbox{max-width:760px;margin:34px auto}.quiztop{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.timer{font-size:22px;font-weight:900;color:var(--gold);font-variant-numeric:tabular-nums}.progress{height:7px;background:#353450;border-radius:99px;overflow:hidden;margin:12px 0 24px}.progress span{height:100%;display:block;background:linear-gradient(90deg,#9d8cff,#ffc84a);width:0;transition:width .25s}.qcount{color:var(--muted);font-size:13px}.question{font-size:clamp(22px,4vw,32px);line-height:1.25;margin:18px 0 22px}.answers{display:grid;gap:11px}.answer{width:100%;text-align:left;padding:16px;border-radius:13px;border:1px solid #454461;background:#242442;color:white;font-weight:650}.answer:hover:not(:disabled){border-color:var(--gold);background:#302d51}.answer.correct{border-color:var(--green);background:#164332}.answer.wrong{border-color:var(--danger);background:#4b252e}.feedback{min-height:24px;color:var(--muted);margin:15px 0;font-size:14px}.quiznav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px}
+.result{text-align:center;max-width:720px;margin:35px auto}.scorecircle{width:150px;height:150px;border-radius:50%;margin:22px auto;background:radial-gradient(circle,#252344 60%,transparent 62%),conic-gradient(var(--gold) var(--score,0%),#41405e 0);display:grid;place-items:center}.scorecircle strong{font-size:38px}.result h2{font-size:34px;margin:12px}.result p{color:var(--muted);line-height:1.6}.result-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}.certificate{background:#fff;color:#202039;border-radius:16px;padding:22px;margin:20px auto;max-width:500px}.certificate small{letter-spacing:.15em;color:#6557a2;font-weight:900}.certificate h3{font-size:25px;margin:9px}.certificate b{font-size:36px;color:#8a6410}.certificate p{color:#555}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#fff;color:#17172d;padding:12px 18px;border-radius:12px;box-shadow:0 8px 35px #0006;z-index:5}
+@media(max-width:700px){.hero{grid-template-columns:1fr}.hero-side{min-height:190px}.orbit{font-size:48px}.grid{grid-template-columns:repeat(2,1fr)}.lower{grid-template-columns:1fr}.top{padding:16px 0}.pill{font-size:10px}.hero-main{padding:24px}.section-head{align-items:start;flex-direction:column}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.brand strong{font-size:12px}}
+</style>
+
+<style>
+.site-footer{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px;padding:34px 5%;margin-top:34px;border-top:1px solid rgba(255,255,255,.13);background:rgba(8,8,22,.45);color:var(--text,#fff)}
+.site-footer strong{display:block;color:var(--gold,#ffc84a);margin-bottom:10px}
+.site-footer p{max-width:420px;color:var(--muted,#b9b8d1);line-height:1.65}
+.site-footer small{color:var(--muted,#b9b8d1)}
+.site-footer a{display:block;width:fit-content;margin:8px 0;color:var(--muted,#d0cee4);text-decoration:none}
+.site-footer a:hover{color:var(--gold,#ffc84a)}
+.site-footer .footer-bottom{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted,#b9b8d1);font-size:12px}
+.site-footer .footer-bottom a{display:inline;color:var(--gold,#ffc84a);margin:0}
+@media(max-width:700px){.site-footer{grid-template-columns:1fr;gap:18px;padding:26px 5%}.site-footer .footer-bottom{grid-column:auto;display:block}.site-footer .footer-bottom span{display:block;margin:6px 0}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+  <div class="brand"><div class="logo">✦</div><div><strong>NAIJA BRAIN ARENA</strong><small>THINK FAST. PLAY SMART.</small></div></div>
+  <div class="pill">🌍 NIGERIA + WORLDWIDE</div>
+</header>
+<main id="home">
+  <section class="hero">
+    <div class="hero-main">
+      <div class="eyebrow">⚡ Your daily brain workout</div>
+      <h1>Are you ready to<br><span class="gold">beat the clock?</span></h1>
+      <p>Challenge your brain, test what you know and share your score. Ten questions stand between you and the Arena champion title.</p>
+      <div class="hero-actions"><button class="primary" id="dailyBtn">Play today's challenge →</button><button class="secondary" id="howBtn">How to play</button></div>
+    </div>
+    <aside class="hero-side">
+      <div class="orbit">🧠🏆</div>
+      <div><div class="eyebrow">Your personal arena</div><h2 style="margin:7px 0 17px">Every question makes you sharper.</h2>
+      <div class="statrow"><div>BEST SCORE<b id="bestScore">0/10</b></div><div>GAMES PLAYED<b id="gamesPlayed">0</b></div><div>XP EARNED<b id="xp">0</b></div></div></div>
+    </aside>
+  </section>
+  <div class="section-head"><div><h2>Choose your arena</h2><p>Pick a topic and show what you know.</p></div><span class="pill">10 QUESTIONS · 60 SECONDS</span></div>
+  <section class="grid" id="categories"></section>
+  <section id="sponsorWall" class="lower" aria-label="Arena partners"></section>
+  <section id="affiliateWall" class="lower" aria-label="Recommended offers"></section>
+  <section id="premiumWall" class="lower" aria-label="Premium membership offers"></section>
+  <section class="lower">
+    <div class="mini"><div class="eyebrow">🏅 Challenge your friends</div><h3>Can they beat your score?</h3><p>Share your result after each game and invite friends to take the same challenge.</p></div>
+    <div class="mini sponsor"><div class="eyebrow">🤝 Partner with the Arena</div><h3>Reach curious minds</h3><p>Interested in sponsoring a quiz, prize or category? Contact us to discuss a partnership.</p><p style="margin-top:12px"><a style="color:var(--gold)" href="mailto:hello@naijabrainarena.com?subject=Arena%20Sponsorship%20Enquiry">Enquire about sponsorship →</a></p></div>
+  </section>
+  <div id="managedAds" class="adslot">ADVERTISEMENT SPACE<br><small>Sponsored placements will appear here when enabled by the site administrator.</small></div>
+</main>
+<section id="quiz" class="quizbox hidden">
+  <div class="quiztop"><button class="secondary" id="exitBtn">← Exit</button><span class="pill" id="categoryName">Category</span><div class="timer" id="timer">60s</div></div>
+  <div class="progress"><span id="progress"></span></div>
+  <div class="qcount" id="qcount">QUESTION 1 OF 10</div>
+  <h2 class="question" id="question">Question goes here</h2>
+  <div class="answers" id="answers"></div>
+  <div class="feedback" id="feedback" aria-live="polite"></div>
+  <div class="quiznav"><span class="qcount">Choose one answer</span><button class="primary" id="nextBtn" disabled>Next question →</button></div>
+</section>
+<section id="results" class="result hidden">
+  <div class="eyebrow">🏆 ARENA RESULTS</div><h2 id="resultTitle">Challenge complete!</h2>
+  <p id="resultText">Your result is ready.</p>
+  <div class="scorecircle" id="scoreCircle"><strong id="scoreText">0/10</strong></div>
+  <div class="certificate" id="certificate"><small>NAIJA BRAIN ARENA · CERTIFICATE OF ACHIEVEMENT</small><h3 id="certTitle">ARENA CHALLENGER</h3><b id="certScore">0/10</b><p id="certCategory">General Knowledge</p><p id="certDate"></p></div>
+  <div class="result-actions"><button class="primary" id="shareBtn">Share my score ↗</button><button class="secondary" id="againBtn">Play again</button><button class="secondary" id="homeBtn">Home</button></div>
+  <div class="adslot">ADVERTISEMENT SPACE<br><small>Keep this clearly labelled if an ad is displayed here.</small></div>
+</section>
+<footer class="site-footer" id="contact">
+  <div class="footer-brand">
+    <strong>✦ NAIJA BRAIN ARENA</strong>
+    <p>Think fast. Play smart. Challenge your mind, improve your knowledge and compete with friends.</p>
+    <small>Owned and operated by <strong>Microsoft Service Engineering</strong>.</small>
+  </div>
+  <div class="footer-links">
+    <strong>Explore</strong>
+    <a href="/#categories">Play quizzes</a>
+    <a href="/about.html">About us</a>
+    <a href="/contact.html">Contact us</a>
+    <a href="/privacy.html">Privacy policy</a>
+    <a href="/terms.html">Terms &amp; conditions</a>
+    <a href="/disclosure.html">Advertising &amp; affiliate disclosure</a>
+  </div>
+  <div class="footer-contact">
+    <strong>Business enquiries</strong>
+    <a href="mailto:toheba234@gmail.com">toheba234@gmail.com</a>
+    <a href="tel:+2348024764090">+234 802 476 4090</a>
+    <a href="https://wa.me/2348024764090" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    <a href="https://www.github.com/toheebay" target="_blank" rel="noopener">GitHub: toheebay</a>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Naija Brain Arena · Microsoft Service Engineering. All rights reserved.</span>
+    <span>Free to play · Made for curious minds · <a href="/admin.html">Admin</a></span>
+  </div>
+</footer>
+</div>
+<div id="toast" class="toast hidden" role="status"></div>
+<script>
+const BANK = {
+  "Mathematics":[
+    ["What is 15% of 200?",["20","30","35","40"],1,"15% × 200 = 30."],
+    ["What is 12 × 8?",["86","92","96","108"],2,"12 multiplied by 8 is 96."],
+    ["A bag costs ₦4,000 after a ₦1,000 discount. What was its original price?",["₦3,000","₦4,500","₦5,000","₦5,500"],2,"Add the discount back: ₦4,000 + ₦1,000 = ₦5,000."],
+    ["What is the square root of 144?",["10","11","12","14"],2,"12 × 12 = 144."],
+    ["If x + 7 = 19, what is x?",["10","11","12","13"],2,"Subtract 7 from both sides."],
+    ["What is 3/4 expressed as a percentage?",["25%","50%","75%","80%"],2,"3 ÷ 4 = 0.75, or 75%."],
+    ["A car travels 150 km in 3 hours. What is its average speed?",["30 km/h","40 km/h","50 km/h","60 km/h"],2,"Speed = distance ÷ time = 50 km/h."],
+    ["What is 25 squared?",["525","625","725","825"],1,"25 × 25 = 625."],
+    ["What is the next number: 2, 4, 8, 16, ...?",["20","24","30","32"],3,"Each number doubles."],
+    ["What is 0.6 as a fraction in simplest form?",["1/6","2/5","3/5","6/5"],2,"0.6 = 6/10 = 3/5."]
+  ],
+  "General Knowledge":[
+    ["Which planet is known as the Red Planet?",["Venus","Mars","Jupiter","Mercury"],1,"Mars appears reddish because of iron oxide on its surface."],
+    ["How many continents are commonly recognised?",["5","6","7","8"],2,"The commonly taught model has seven continents."],
+    ["What is the largest ocean on Earth?",["Atlantic","Indian","Arctic","Pacific"],3,"The Pacific is the largest ocean."],
+    ["Which gas do plants absorb from the atmosphere?",["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],2,"Plants use carbon dioxide during photosynthesis."],
+    ["What is the chemical symbol for gold?",["Go","Gd","Au","Ag"],2,"Au comes from the Latin word aurum."],
+    ["Which instrument measures temperature?",["Barometer","Thermometer","Compass","Hygrometer"],1,"A thermometer measures temperature."],
+    ["How many sides does a hexagon have?",["5","6","7","8"],1,"A hexagon has six sides."],
+    ["Which is the closest star to Earth?",["Sirius","The Sun","Polaris","Alpha Centauri"],1,"The Sun is our nearest star."],
+    ["What is the process of water vapour turning into liquid called?",["Evaporation","Condensation","Freezing","Melting"],1,"Condensation changes gas into liquid."],
+    ["Which language has the most native speakers worldwide?",["English","Spanish","Mandarin Chinese","Arabic"],2,"Mandarin Chinese has the largest number of native speakers."]
+  ],
+  "Technology":[
+    ["What does CPU stand for?",["Central Processing Unit","Computer Power Utility","Core Program User","Central Program Upload"],0,"CPU means Central Processing Unit."],
+    ["Which of these is a web browser?",["Linux","Firefox","Python","Bluetooth"],1,"Firefox is a web browser."],
+    ["What does URL identify?",["A web address","A computer chip","A file size","A password"],0,"URL stands for Uniform Resource Locator."],
+    ["Which number system do computers fundamentally use?",["Decimal","Binary","Roman","Hexadecimal only"],1,"At the hardware level, computers use binary states."],
+    ["What does HTML mainly define?",["Webpage structure","Internet speed","Photo editing","Battery health"],0,"HTML structures content on webpages."],
+    ["Which is an example of cloud storage?",["Google Drive","HDMI","RAM","USB port"],0,"Google Drive stores files online."],
+    ["What does Wi-Fi allow devices to do?",["Connect wirelessly to a network","Print without ink","Charge faster","Increase screen size"],0,"Wi-Fi provides wireless network connectivity."],
+    ["Which is a programming language?",["Python","Chrome","Android","Ethernet"],0,"Python is a programming language."],
+    ["What is two-factor authentication designed to improve?",["Account security","Screen brightness","Download speed","Storage capacity"],0,"It adds a second verification step."],
+    ["What does AI stand for?",["Automated Internet","Artificial Intelligence","Advanced Input","Applied Interface"],1,"AI means Artificial Intelligence."]
+  ],
+  "Sports & Football":[
+    ["How many players does a football team start with on the pitch?",["9","10","11","12"],2,"A standard team has 11 players on the field."],
+    ["How long is a standard football match, excluding added time?",["60","80","90","100"],2,"A standard match is 90 minutes."],
+    ["In tennis, what is a score of zero called?",["Nil","Love","Blank","Deuce"],1,"In tennis, zero is called love."],
+    ["Which country hosted the 2010 FIFA World Cup?",["Brazil","Germany","South Africa","France"],2,"South Africa hosted the 2010 tournament."],
+    ["How many rings are on the Olympic symbol?",["4","5","6","7"],1,"The Olympic symbol has five interlocking rings."],
+    ["What is the maximum score with one dart in standard darts?",["20","40","50","60"],3,"A triple 20 scores 60."],
+    ["Which sport uses a shuttlecock?",["Squash","Badminton","Table tennis","Volleyball"],1,"Badminton is played with a shuttlecock."],
+    ["How many points is a basketball free throw worth?",["1","2","3","4"],0,"A free throw is worth one point."],
+    ["What colour card means a player is sent off in football?",["Yellow","Blue","Red","Green"],2,"A red card means dismissal."],
+    ["Which athletics race is one full lap of a standard 400m track?",["100m","200m","400m","800m"],2,"One lap is 400 metres."]
+  ],
+  "Nigerian Trivia":[
+    ["What is the capital city of Nigeria?",["Lagos","Kano","Abuja","Ibadan"],2,"Abuja is Nigeria's capital."],
+    ["What is Nigeria's currency?",["Cedi","Naira","Dalasi","Shilling"],1,"Nigeria uses the naira."],
+    ["On what date does Nigeria celebrate Independence Day?",["1 October","1 January","12 June","29 May"],0,"Nigeria became independent on 1 October 1960."],
+    ["How many states are in Nigeria?",["30","32","36","37"],2,"Nigeria has 36 states and the Federal Capital Territory."],
+    ["Which Nigerian river is among the country's two major rivers?",["Nile","Niger","Congo","Zambezi"],1,"The River Niger is one of Nigeria's major rivers."],
+    ["What are the colours of Nigeria's national flag?",["Green and white","Blue and white","Green and yellow","Red and white"],0,"The flag has green-white-green vertical bands."],
+    ["Which city is widely known as Nigeria's commercial centre?",["Enugu","Lagos","Jos","Abeokuta"],1,"Lagos is a major commercial and financial centre."],
+    ["What is the name of Nigeria's national anthem adopted in 2024?",["Arise, O Compatriots","Nigeria, We Hail Thee","One Nation, One People","Land of Hope"],1,"Nigeria, We Hail Thee was reinstated in 2024."],
+    ["Which ocean borders southern Nigeria?",["Indian Ocean","Atlantic Ocean","Pacific Ocean","Arctic Ocean"],1,"Nigeria's southern coastline borders the Atlantic."],
+    ["Which Nigerian author wrote Things Fall Apart?",["Wole Soyinka","Chinua Achebe","Chimamanda Ngozi Adichie","Ben Okri"],1,"Chinua Achebe wrote Things Fall Apart."]
+  ],
+  "Brain Teasers":[
+    ["What has keys but cannot open locks?",["A map","A piano","A door","A clock"],1,"A piano has musical keys."],
+    ["What gets wetter the more it dries?",["A sponge","A towel","Rain","Soap"],1,"A towel absorbs water as it dries things."],
+    ["If you pass the person in second place in a race, what place are you in?",["First","Second","Third","Fourth"],1,"You take the position of the person you passed: second."],
+    ["Which month has 28 days?",["February only","All of them","June only","December only"],1,"Every month has at least 28 days."],
+    ["What has a neck but no head?",["A bottle","A shoe","A river","A tree"],0,"A bottle has a neck."],
+    ["A farmer has 17 sheep. All but 9 run away. How many remain?",["8","9","17","0"],1,"All but 9 means 9 remain."],
+    ["What comes once in a minute, twice in a moment, but never in a thousand years?",["The letter M","The letter T","The number 1","The letter A"],0,"The letter M appears once in minute and twice in moment."],
+    ["You have 3 apples and take away 2. How many do you have?",["1","2","3","5"],1,"You took two, so you have two."],
+    ["What can travel around the world while staying in one corner?",["A stamp","A plane","A shadow","A compass"],0,"A postage stamp stays in the corner of an envelope."],
+    ["Which is heavier: 1 kg of iron or 1 kg of cotton?",["Iron","Cotton","They weigh the same","Cannot tell"],2,"Both weigh exactly one kilogram."]
+  ]
+};
+const categories=[
+ ["Mathematics","➗","Numbers, logic and quick calculations.","#3a3470"],
+ ["General Knowledge","🌍","Discover facts about our world.","#24545a"],
+ ["Technology","💻","Computers, science and digital life.","#563d78"],
+ ["Sports & Football","⚽","Test your sporting knowledge.","#674729"],
+ ["Nigerian Trivia","🇳🇬","Celebrate knowledge of Nigeria.","#285b43"],
+ ["Brain Teasers","🧩","Riddles that make you think twice.","#6b4054"]
+];
+let category="General Knowledge",questions=[],index=0,score=0,seconds=60,tick=null,answered=false,lastCategory=category;
+const $=id=>document.getElementById(id);
+function stats(){let s=JSON.parse(localStorage.getItem("nbaStats")||'{"best":0,"games":0,"xp":0}');$("bestScore").textContent=s.best+"/10";$("gamesPlayed").textContent=s.games;$("xp").textContent=s.xp}
+function renderCats(){$("categories").innerHTML=categories.map(([name,emoji,desc,color])=>`<button class="cat" data-cat="${name}" style="background:linear-gradient(145deg,${color},#1b1b34 78%)"><div class="emoji">${emoji}</div><h3>${name}</h3><p>${desc}</p><span class="tag">PLAY CHALLENGE →</span></button>`).join("");document.querySelectorAll(".cat").forEach(b=>b.addEventListener("click",()=>start(b.dataset.cat)))}
+function show(view){["home","quiz","results"].forEach(id=>$(id).classList.toggle("hidden",id!==view));window.scrollTo({top:0,behavior:"smooth"})}
+function start(cat){category=cat;lastCategory=cat;questions=[...BANK[cat]].sort(()=>Math.random()-.5).slice(0,10);index=0;score=0;seconds=60;show("quiz");$("categoryName").textContent=cat;$("timer").textContent="60s";renderQuestion();clearInterval(tick);tick=setInterval(()=>{seconds--;$("timer").textContent=seconds+"s";if(seconds<=10)$("timer").style.color="var(--danger)";if(seconds<=0)finish(true)},1000)}
+function renderQuestion(){answered=false;const q=questions[index];$("qcount").textContent=`QUESTION ${index+1} OF ${questions.length}`;$("question").textContent=q[0];$("progress").style.width=(index/questions.length*100)+"%";$("feedback").textContent="";$("nextBtn").disabled=true;$("nextBtn").textContent=index===9?"See my result →":"Next question →";$("answers").innerHTML=q[1].map((a,i)=>`<button class="answer" data-index="${i}"><span style="color:var(--gold);margin-right:10px">${String.fromCharCode(65+i)}.</span>${a}</button>`).join("");document.querySelectorAll(".answer").forEach(b=>b.addEventListener("click",()=>choose(+b.dataset.index)))}
+function choose(n){if(answered)return;answered=true;let q=questions[index],correct=n===q[2];if(correct)score++;document.querySelectorAll(".answer").forEach((b,i)=>{b.disabled=true;if(i===q[2])b.classList.add("correct");else if(i===n)b.classList.add("wrong")});$("feedback").textContent=(correct?"✓ Correct! ":"✕ Not quite. ")+q[3];$("nextBtn").disabled=false}
+function finish(timeUp=false){clearInterval(tick);$("timer").style.color="var(--gold)";let s=JSON.parse(localStorage.getItem("nbaStats")||'{"best":0,"games":0,"xp":0}');s.games++;s.best=Math.max(s.best,score);s.xp+=score*10;localStorage.setItem("nbaStats",JSON.stringify(s));stats();let pct=score*10,title=score>=9?"ARENA LEGEND":score>=7?"BRAIN CHAMPION":score>=5?"RISING CHALLENGER":"ARENA ROOKIE";$("resultTitle").textContent=timeUp?"Time's up!":"Challenge complete!";$("resultText").textContent=`You scored ${score} out of 10 in ${category}. ${timeUp?"The timer ran out. ":""}Challenge a friend to beat your score!`;$("scoreText").textContent=score+"/10";$("scoreCircle").style.setProperty("--score",pct+"%");$("certTitle").textContent=title;$("certScore").textContent=score+"/10";$("certCategory").textContent=category;$("certDate").textContent=new Date().toLocaleDateString(undefined,{year:"numeric",month:"long",day:"numeric"});show("results")}
+$("nextBtn").onclick=()=>{if(!answered)return;if(index<9){index++;renderQuestion()}else finish()};
+$("exitBtn").onclick=()=>{clearInterval(tick);show("home")};
+$("dailyBtn").onclick=()=>start("General Knowledge");
+$("howBtn").onclick=()=>alert("Choose a category, answer 10 multiple-choice questions before the 60-second timer ends, then share your score. Each correct answer earns 10 XP. This first version saves your stats only on this device.");
+$("againBtn").onclick=()=>start(lastCategory);$("homeBtn").onclick=()=>show("home");
+$("shareBtn").onclick=async()=>{const msg=`I scored ${score}/10 in ${category} on Naija Brain Arena! 🧠🏆 Can you beat me?`;const data={title:"Naija Brain Arena challenge",text:msg,url:location.href};try{if(navigator.share)await navigator.share(data);else if(navigator.clipboard){await navigator.clipboard.writeText(msg+" "+location.href);toast("Your challenge text has been copied. Paste it on Facebook!")}else{prompt("Copy your challenge:",msg+" "+location.href)}}catch(e){if(e.name!=="AbortError")toast("Sharing isn't available on this browser.")}};
+function toast(t){$("toast").textContent=t;$("toast").classList.remove("hidden");setTimeout(()=>$("toast").classList.add("hidden"),2800)}
+$("year").textContent=new Date().getFullYear();renderCats();stats();
+</script>
+
+<script>
+(async function loadArenaPromotions(){
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const safeUrl = value => { try { const u = new URL(value, location.origin); return ["http:","https:"].includes(u.protocol) ? u.href : ""; } catch { return ""; } };
+  try {
+    const response = await fetch("/api/public-config", {headers:{"Accept":"application/json"}});
+    if (!response.ok) return;
+    const cfg = await response.json();
+    const sponsorWall = document.getElementById("sponsorWall");
+    const affiliateWall = document.getElementById("affiliateWall");
+    const premiumWall = document.getElementById("premiumWall");
+    const ads = document.getElementById("managedAds");
+    const sponsors = (cfg.sponsors || []).filter(x=>x.active && x.name && safeUrl(x.url));
+    const affiliates = (cfg.affiliates || []).filter(x=>x.active && x.title && safeUrl(x.url));
+    const adItems = (cfg.ads || []).filter(x=>x.active && x.title && safeUrl(x.url));
+    const premium = (cfg.premium || []).filter(x=>x.active && x.title && safeUrl(x.url));
+    if (sponsors.length && sponsorWall) sponsorWall.innerHTML = sponsors.map(x=>`<article class="mini sponsor"><div class="eyebrow">🤝 SPONSORED PARTNER</div><h3>${esc(x.name)}</h3><p>${esc(x.description || "Supporting Naija Brain Arena.")}</p><p style="margin-top:12px"><a rel="sponsored noopener" target="_blank" href="${esc(safeUrl(x.url))}" style="color:var(--gold)">${esc(x.button || "Visit partner")} →</a></p></article>`).join("");
+    if (affiliates.length && affiliateWall) affiliateWall.innerHTML = affiliates.map(x=>`<article class="mini"><div class="eyebrow">⭐ PARTNER OFFER</div><h3>${esc(x.title)}</h3><p>${esc(x.description || "")}</p><p style="margin-top:12px"><a rel="sponsored noopener" target="_blank" href="${esc(safeUrl(x.url))}" style="color:var(--gold)">${esc(x.button || "View offer")} →</a></p><small style="color:var(--muted)">We may earn a commission from qualifying purchases.</small></article>`).join("");
+    if (premium.length && premiumWall) premiumWall.innerHTML = premium.map(x=>`<article class="mini sponsor"><div class="eyebrow">💎 ARENA PREMIUM</div><h3>${esc(x.title)} ${x.price ? "· "+esc(x.price) : ""}</h3><p>${esc(x.description || "")}</p><p style="margin-top:12px"><a rel="noopener" target="_blank" href="${esc(safeUrl(x.url))}" style="color:var(--gold)">${esc(x.button || "Learn more")} →</a></p><small style="color:var(--muted)">Premium offer enquiry. Payment is not processed on this website yet.</small></article>`).join("");
+    if (adItems.length && ads) ads.innerHTML = adItems.map(x=>`<div style="padding:8px"><small>ADVERTISEMENT · ${esc(x.label || "Sponsored")}</small><br><strong>${esc(x.title)}</strong><br><a rel="sponsored noopener" target="_blank" href="${esc(safeUrl(x.url))}" style="color:var(--gold)">${esc(x.button || "Learn more")} →</a></div>`).join("");
+  } catch (e) { /* The quiz remains playable if the promotions API is not configured yet. */ }
+})();
+</script>
+
+</body></html>
